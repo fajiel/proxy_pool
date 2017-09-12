@@ -1,11 +1,5 @@
 # coding=utf-8
-"""
 
-Author : lifajie@sansi.com
-
-Date : 2017-08-16
-
-"""
 import re
 import scrapy
 from ProxyIP.util import verify_ip
