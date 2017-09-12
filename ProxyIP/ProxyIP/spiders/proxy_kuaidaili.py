@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+"""
+Author:lifajie@sansi.com
+
+Date:2017-08-16
+
+"""
 import re
 import scrapy
 from ProxyIP.util import verify_ip
@@ -6,7 +12,8 @@ from ProxyIP.items import ProxyipItem
 
 class KuaiSpider(scrapy.Spider):
     name = "proxy_kuai"
-    start_urls = [u"http://www.kuaidaili.com/free/inha/{}/".format(i) for i in range(1, 101)]
+    # start_urls = [u"http://www.kuaidaili.com/free/inha/1/",]
+    start_urls = [u"http://www.kuaidaili.com/free/inha/{}/".format(i) for i in range(1, 20)]
 
     headers = {
         'Host': 'www.kuaidaili.com',

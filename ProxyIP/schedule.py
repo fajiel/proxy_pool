@@ -1,12 +1,19 @@
 # -*- coding: utf-8 -*-
+"""
+Author:lifajie@sansi.com
+
+Date:2017-08-16
+
+"""
 
 import os
 import time
 from apscheduler.schedulers.background import BackgroundScheduler
+from ProxyIP.util import query_ip, verify_ip, del_ip
 
-TIME_DAY_XICI = 2.5
-TIME_DAY_KUAI = 2
-TIME_DAY_LLIP = 1.5
+TIME_DAY_XICI = 0.8
+TIME_DAY_KUAI = 1
+TIME_DAY_LLIP = 0.5
 TIME_DAY_CHECK = 0.25
 
 def schedule_xici():
@@ -31,7 +38,6 @@ def schedule_66ip():
     print(result)
 
 def schedule_check():
-    from ProxyIP.util import query_ip, verify_ip, del_ip
     ip_list = query_ip()
     for ip, port in ip_list:
         if verify_ip(ip, port):
@@ -50,7 +56,7 @@ if __name__ == '__main__':
     try:
         while True:
             time.sleep(60)
-            print('sleep!')
+            print('等待获取或验证IP，请稍后！')
     except (KeyboardInterrupt, SystemExit):
         scheduler.shutdown()
         print('Exit The Job!')

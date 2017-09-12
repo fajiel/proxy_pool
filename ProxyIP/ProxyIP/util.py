@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+"""
+Author:lifajie@sansi.com
+
+Date:2017-08-16
+
+"""
 import re
 import time
 import requests
@@ -26,7 +32,7 @@ def verify_ip(ip, port):
     return isvalid
 
 def query_ip():
-    from ProxyIP.db_manage import sessionmaker, engine, ProxyIP
+    from ProxyIP.ProxyIP.db_manage import sessionmaker, engine, ProxyIP
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
@@ -37,7 +43,7 @@ def query_ip():
     return ip_list
 
 def del_ip(ip, port):
-    from ProxyIP.db_manage import sessionmaker, engine, ProxyIP
+    from ProxyIP.ProxyIP.db_manage import sessionmaker, engine, ProxyIP
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()

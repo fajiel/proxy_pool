@@ -7,7 +7,8 @@ from sqlalchemy.orm import sessionmaker
 
 #  Create base for base
 Base = declarative_base()
-engine = create_engine('mysql+mysqlconnector://root:''@localhost:3306/Scrapy?charset=utf8', echo=False)
+# engine = create_engine('mysql+mysqlconnector://root:''@localhost:3306/Scrapy?charset=utf8', echo=False)
+engine = create_engine('mysql+mysqlconnector://root:''@localhost:3306/Proxy?charset=utf8', echo=False)
 
 
 class ProxyIP(Base):

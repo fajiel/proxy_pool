@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+"""
+Author:lifajie@sansi.com
+
+Date:2017-08-16
+
+"""
 import re
 import scrapy
 from ProxyIP.util import verify_ip
@@ -6,7 +12,8 @@ from ProxyIP.items import ProxyipItem
 
 class XiciSpider(scrapy.Spider):
     name = "proxy_xici"
-    start_urls = [u"http://www.xicidaili.com/nn/{}".format(i) for i in range(1, 201)]
+    # start_urls = [u"http://www.xicidaili.com/nn/1"]
+    start_urls = [u"http://www.xicidaili.com/nn/{}".format(i) for i in range(1, 20)]
 
     custom_settings = {
         'RETRY_TIMES': 5,

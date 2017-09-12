@@ -1,8 +1,19 @@
 # -*- coding: utf-8 -*-
+"""
+Author:lifajie@sansi.com
+
+Date:2017-08-28
+
+"""
+
+import os
+import sys
+sys.path.append(os.path.join(os.path.realpath(__file__), u"../.."))
+
 import random
 import json
 from flask import Flask, request
-from ProxyIP.db_manage import sessionmaker, engine, ProxyIP
+from ProxyIP.ProxyIP.db_manage import sessionmaker, engine, ProxyIP
 
 app = Flask(__name__)
 
@@ -51,4 +62,4 @@ def get_ip():
     return result
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=8000)
